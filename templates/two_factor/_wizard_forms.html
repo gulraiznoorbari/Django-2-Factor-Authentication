@@ -1,4 +1,7 @@
-<table class="mb-3">
+{% load example %}
   {{ wizard.management_form }}
-  {{ wizard.form }}
-</table>
+
+  {% for field in wizard.form %}
+  <label class="form-label">{{ field.label }}</label>
+  {{field | add_classes:'form-control mb-2 account-form'}}
+  {% endfor %}
